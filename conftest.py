@@ -244,7 +244,7 @@ def session(request, engine, connection, Base, init_models):
     except TypeError:
         # sqlalchemy 1.3
         session = Session()
-    i18n.get_locale = get_locale
+    # i18n.get_locale = get_locale
 
     def teardown():
         aggregates.manager.reset()

@@ -49,3 +49,10 @@ class TestCountryType:
         query = sa.select(*_select_args(User.country))
         # the type should be cacheable and not throw exception
         session.execute(query)
+
+    def test_issue_189(self, User, session):
+        foo = User(country='RW')
+        assert isinstance(foo.country, Country)
+        assert foo.country.code == "RW"
+        assert Country.validate("RW") is None
+        assert foo.country.name == "Rwanda"
