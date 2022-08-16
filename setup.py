@@ -37,6 +37,8 @@ extras_require = {
         'flake8>=2.4.0',
         'isort>=4.2.2',
         'pyodbc',
+        # An alpha version of greenlet v2 is needed for Python 3.11 support.
+        'greenlet==2.0.0a2;python_version>="3.11"',
     ],
     'babel': ['Babel>=1.3'],
     'arrow': ['arrow>=0.3.4'],
@@ -91,6 +93,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
